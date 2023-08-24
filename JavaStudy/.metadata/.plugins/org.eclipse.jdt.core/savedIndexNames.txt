@@ -1,0 +1,17 @@
+INDEX VERSION 1.132+C:\Users\user\Desktop\AIschool\JavaStudy\.metadata\.plugins\org.eclipse.jdt.core
+1944413739.index
+2432630984.index
+3626380086.index
+4192040588.index
+1865797976.index
+1224515342.index
+192081947.index
+3322197694.index
+204617839.index
+2478081562.index
+3180976502.index
+2644063125.index
+1479725508.index
+650900558.index
+1466036994.index
+777130320.index

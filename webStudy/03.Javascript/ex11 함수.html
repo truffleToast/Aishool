@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수
+        // 코드의 재사용, 유지보수 용이, 신뢰성, 가독성
+        // intro(); 
+        //hoisting 을 통해 실행할 수 있다. 
+        let msg2 ="Hello";
+        // 함수선언문
+        function intro(){
+
+            console.log("intro()함수가 실행되었습니다!");
+            //지역변수 선언& 초기화
+            let msg ="function!";
+            console.log(msg);
+            console.log(msg2);
+        }
+//        msg는 intro의 지역변수이기 때문에 함수 바깥쪽에서 사용이 불가능
+        //console.log(msg);      
+        // 함수호출(함수실행)
+        intro();
+
+
+
+    </script>
+</body>
+</html>

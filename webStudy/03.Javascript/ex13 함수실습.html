@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //함수의 매개변수, return문은 상황에 따라 정의
+        // 함수를 정의하는 건 경험!
+        let scores=[76,53,80,90,88];
+        
+        let sumFunc= function(scoreData){
+            let result=0;
+            for(let i=0; i<scoreData.length;i++){
+                result+=scoreData[i];
+            }
+            console.log(result);
+            return result;
+        }
+        sumFunc(scores);
+        //sumFunc()의 결과값을 활용해서 평균값을 구할 수 있다.
+        //sumFunc()안에는 리턴을 활용해서 받을 수도 있다.    
+        let avgscores = sumFunc(scores)/ scores.length;
+        console.log(avgscores);
+
+
+    </script>
+    
+</body>
+</html>

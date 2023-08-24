@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //실습문제 - Updown 프로그램
+        //0. 랜덤숫자를 생성한다. 
+        //1. 사용자로부터 숫자를 입력받는다.
+        //2. 사용자가 입력한 숫자와 랜덤숫자를 비교합니다.
+        //2-1 사용자가 입력한 숫자가 맞다면 console로 출력 정답입니당
+        //2-2 랜덤숫자가 더 크면 업  alert
+        //2-3 랜덤숫자가 더 작으면 다운 alert
+        let answer=parseInt(Math.random()*100)+1;
+        console.log("생성된 숫자: ", answer)
+         while(true){
+            user_answer= parseInt(prompt("숫자를 입력해주세요"));
+            console.log(user_answer)
+            if (answer ===  user_answer){
+               console.log("정답입니다.😗");
+                break;
+            }
+            else if (answer > user_answer){
+                window.alert("입력한 숫자보다 큽니다. 😒");
+            }
+            else{
+                window.alert("입력한 숫자보다 작습니다. 😒");
+            }
+            }
+
+
+
+    </script>
+    
+</body>
+</html>

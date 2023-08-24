@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //실습 문제 10개의 랜덤숫자를 저장하는 배열, 짝수의 개수
+        //결과 형태 arr에 저장된 짝수는 0,0,0,0,0 이고 총 0개 입니다.
+     
+        let rdarray= [];
+        for(i=0; i<10; i++){
+            let randomN= parseInt(Math.random()*100)+1;     
+            rdarray[i]=randomN;
+        }
+        console.log(rdarray)
+        let even=[]
+        for(let i=0 ; i<rdarray.length;i++){
+            if(rdarray[i]%2==0){
+                even.push(rdarray[i])
+            }
+        }
+        let seven = ''; //문자열로 접근
+        for(let i= 0 ; i<even.length; i++){
+            if(i< even.length -1) 
+                seven+= String(even[i]) + ", "
+            else
+                seven+= String(even[i])    
+        }
+        console.log(seven);
+        console.log("arr에 저장된 짝수는" + seven + "이고 총"
+         + even.length +"개 입니다.");
+        console.log(`arr에 저장된 짝수는 ${even}
+        이고 총 ${even.length}개입니다.`);
+        // 템플릿 문자열: 문자열과 변수를 + 연산자 없이 함께 사용할 수 
+        // 있는 문법
+        // 형식: '문자열 ... ${변수} 문자열... '
+        // 문자열 데이터를 줄바꿈하더라도 오류가 발생하지 않는다. 
+
+    </script>
+</body>
+</html>

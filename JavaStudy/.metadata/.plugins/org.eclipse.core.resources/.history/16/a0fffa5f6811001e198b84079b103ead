@@ -1,0 +1,22 @@
+package baekjoon;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class Alogrism10811 {
+
+	public static void main(String[] args) throws IOException{
+		//1. 데이터를 입력 받아야한다.
+		//2. 입력 받기위해 import
+		//3. 거꾸로 바꾸는 과정 	
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in)); // br이라는 변수로 Buffered입력
+		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out)); //bw이라는 변수로 Buffered 출력
+		
+		
+		
+	}
+
+}

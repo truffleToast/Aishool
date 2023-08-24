@@ -1,0 +1,58 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+Connection conn=null;
+PreparedStatement psmt=null;
+int cnt=0;
+request.setCharacterEncoding("UTF-8");
+String id=request.getParameter("id");
+String pw=request.getParameter("pw");
+Class.forName("oracle.jdbc.driver.OracleDriver");
+String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
+String db_id = "shopping";
+String db_pw = "12345";
+conn = DriverManager.getConnection(db_url, db_id, db_pw);
+if (conn != null) {
+	System.out.println("DB연결 성공!");
+} else {
+	System.out.println("DB연결 실패...");
+}
+String sql = "DELETE FROM MEMBER WHERE ID=? AND PW=?";
+psmt=conn.prepareStatement(sql);
+psmt.setString(1,id);
+psmt.setString(2,pw);
+cnt=psmt.executeUpdate();
+
+if (psmt!=null){
+	psmt.close();}
+if(conn!=null){
+	conn.close();
+}
+if (cnt!=0){
+	System.out.println(cnt);
+	response.sendRedirect("Main.jsp");
+}else{
+	response.sendRedirect("delete.jsp");
+}
+
+
+
+// 삭제 성공시 MAIN.JSP
+// 삭제 실패시 DELETE.JSP
+%>
+
+
+
+</body>
+</html>

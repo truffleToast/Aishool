@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;Library&apos; to &apos;library책관리&apos;&#x0D;&#x0A;- Original project: &apos;Ex10JDBC&apos;&#x0D;&#x0A;- Original element: &apos;Ex10JDBC/src/Library&apos;&#x0D;&#x0A;- Renamed element: &apos;Ex10JDBC/src/library책관리&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;Library&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;Library" name="library책관리" qualified="false" references="true" stamp="1688084414323" textual="false" version="1.0"/>
+</session>

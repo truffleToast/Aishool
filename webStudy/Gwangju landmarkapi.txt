@@ -1,0 +1,6 @@
+공공데이터api키
+api키
+XMPYxay465e0EV5bKHF4Vsw6xJt%2FGN03OaIOGoMwQTvAMzC1A8A9TewzOMAJKXQDKYvzGHqj%2Bt8Y1EuuGTGPxg%3D%3D
+
+요청메시지
+http://apis.data.go.kr/6290000/tourdestbaseinfo/gettourdestbaseinfo?serviceKey=XMPYxay465e0EV5bKHF4Vsw6xJt%2FGN03OaIOGoMwQTvAMzC1A8A9TewzOMAJKXQDKYvzGHqj%2Bt8Y1EuuGTGPxg%3D%3D&type=json&tourDestNm=공원&pageNo=1&numOfRows=2

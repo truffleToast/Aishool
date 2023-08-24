@@ -1,0 +1,62 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+Connection conn=null;
+PreparedStatement psmt=null;
+int cnt=0; //변화를 확인할 수 있는 전역변수 cnt생성
+request.setCharacterEncoding("UTF-8"); //혹시모를 utf-8
+String id=request.getParameter("id"); //id 가져오기
+String pw=request.getParameter("pw"); //pw 가져오기
+Class.forName("oracle.jdbc.driver.OracleDriver"); // 동적로딩
+String db_url = "jdbc:oracle:thin:@localhost:1521:xe"; // jdbc연결
+String db_id = "shopping"; // db_id
+String db_pw = "12345";  //db_pw
+conn = DriverManager.getConnection(db_url, db_id, db_pw);
+if (conn != null) {
+	System.out.println("DB연결 성공!");
+} else {
+	System.out.println("DB연결 실패...");
+}
+String sql = "DELETE FROM MEMBER WHERE ID=? AND PW=?"; //조건
+psmt=conn.prepareStatement(sql);
+psmt.setString(1,id);
+psmt.setString(2,pw);
+cnt=psmt.executeUpdate(); //c
+
+if (psmt!=null){
+	psmt.close();}
+if(conn!=null){
+	conn.close();
+}
+if (cnt!=0){
+	System.out.println(cnt);
+	out.print("<script>");
+	out.print("alert('회원탈퇴 성공')");
+	out.print("location.href='main.jsp'");
+	out.print("</script>");
+	response.sendRedirect("Main.jsp");
+}else{
+	response.sendRedirect("delete.jsp");
+}
+
+
+
+// 삭제 성공시 MAIN.JSP
+// 삭제 실패시 DELETE.JSP
+%>
+
+
+
+</body>
+</html>
