@@ -5,7 +5,7 @@
 <%@page import="java.util.ArrayList"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>  
+    pageEncoding="UTF-8"%>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -29,32 +29,32 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
 						<nav>
 								<%if (info ==null) {%>
-								<a href="#menu">·Î±×ÀÎ</a>
+								<a href="#menu">ë¡œê·¸ì¸</a>
 								<%}else{ %>
-								<a href="update.jsp">°³ÀÎÁ¤º¸ ¼öÁ¤</a>
-								<a href="LogOutService">·Î±×¾Æ¿ô</a>
+								<a href="update.jsp">ê°œì¸ì •ë³´ ìˆ˜ì •</a>
+								<a href="LogOutService.do">ë¡œê·¸ì•„ì›ƒ</a>
 								<%} %>
-							<!-- ·Î±×ÀÎ ÈÄ Logout.jsp·Î ÀÌµ¿ÇÒ ¼ö ÀÖ´Â'·Î±×¾Æ¿ô'¸µÅ©¿Í '°³ÀÎÁ¤º¸¼öÁ¤'¸µÅ©¸¦ Ãâ·ÂÇÏ½Ã¿À. -->
+							<!-- ë¡œê·¸ì¸ í›„ Logout.jspë¡œ ì´ë™í•  ìˆ˜ ìˆëŠ”'ë¡œê·¸ì•„ì›ƒ'ë§í¬ì™€ 'ê°œì¸ì •ë³´ìˆ˜ì •'ë§í¬ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤. -->
 						</nav>
 					</header>
 
 				<!-- Menu -->
 					<nav id="menu">	
 						<ul class="links">
-							<li><h5>·Î±×ÀÎ</h5></li>
-								<form action="LoginService" method= "post">
-									<li><input type="text"  placeholder="EmailÀ» ÀÔ·ÂÇÏ¼¼¿ä" name="email"></li>
-									<li><input type="password"  placeholder="PW¸¦ ÀÔ·ÂÇÏ¼¼¿ä" name= "pw"></li>
+							<li><h5>ë¡œê·¸ì¸</h5></li>
+								<form action="LoginService.do" method= "post">
+									<li><input type="text"  placeholder="Emailì„ ì…ë ¥í•˜ì„¸ìš”" name="email"></li>
+									<li><input type="password"  placeholder="PWë¥¼ ì…ë ¥í•˜ì„¸ìš”" name= "pw"></li>
 									<li><input type="submit" value="LogIn" class="button fit"></li>
 								</form>
 						</ul>
 						<ul class="actions vertical">
-							<li><h5>È¸¿ø°¡ÀÔ</h5></li>
-								<form action = "JoinService" method="post">
-									<li><input type="text"  placeholder="EmailÀ» ÀÔ·ÂÇÏ¼¼¿ä" name ="email"></li>
-									<li><input type="password"  placeholder="PW¸¦ ÀÔ·ÂÇÏ¼¼¿ä" name="pw"></li>
-									<li><input type="text"  placeholder="ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä" name="phone"></li>
-									<li><input type="text"  placeholder="ÁıÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä" name="addr"> </li>
+							<li><h5>íšŒì›ê°€ì…</h5></li>
+								<form action = "JoinService.do" method="post">
+									<li><input type="text"  placeholder="Emailì„ ì…ë ¥í•˜ì„¸ìš”" name ="email"></li>
+									<li><input type="password"  placeholder="PWë¥¼ ì…ë ¥í•˜ì„¸ìš”" name="pw"></li>
+									<li><input type="text"  placeholder="ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”" name="phone"></li>
+									<li><input type="text"  placeholder="ì§‘ì£¼ì†Œë¥¼ ì…ë ¥í•˜ì„¸ìš”" name="addr"> </li>
 									<li><input type="submit" value="JoinUs" class="button fit"></li>
 								</form>
 						</ul>
@@ -64,19 +64,19 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 						<div class="inner">
 							<header class="major">
 							<%if (info!=null){%>
-							<h1><%=info.getEmail()%>´Ô È¯¿µÇÕ´Ï´Ù.</h1>
+							<h1><%=info.getEmail()%>ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.</h1>
 							<%}else{%>
-							<h1>·Î±×ÀÎ ÇØÁÖ¼¼¿ä.</h1>
+							<h1>ë¡œê·¸ì¸ í•´ì£¼ì„¸ìš”.</h1>
 							<% }%>
 								
 										
-								<!-- ·Î±×ÀÎ ÈÄ ·Î±×ÀÎ ÇÑ »ç¿ëÀÚÀÇ ¼¼¼Ç¾ÆÀÌµğ·Î ¹Ù²Ù½Ã¿À.
-									 ex)smart´Ô È¯¿µÇÕ´Ï´Ù -->
+								<!-- ë¡œê·¸ì¸ í›„ ë¡œê·¸ì¸ í•œ ì‚¬ìš©ìì˜ ì„¸ì…˜ì•„ì´ë””ë¡œ ë°”ê¾¸ì‹œì˜¤.
+									 ex)smartë‹˜ í™˜ì˜í•©ë‹ˆë‹¤ -->
 							</header>
 							<div class="content">
-								<p>¾Æ·¡´Â Áö±İ±îÁö ¹è¿î À¥ ±â¼úµéÀÔ´Ï´Ù.<br></p>
+								<p>ì•„ë˜ëŠ” ì§€ê¸ˆê¹Œì§€ ë°°ìš´ ì›¹ ê¸°ìˆ ë“¤ì…ë‹ˆë‹¤.<br></p>
 								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">È®ÀÎÇÏ±â</a></li>
+									<li><a href="#one" class="button next scrolly">í™•ì¸í•˜ê¸°</a></li>
 								</ul>
 							</div>
 						</div>
@@ -93,7 +93,7 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">HTML</a></h3>
-										<p>È¨ÆäÀÌÁö¸¦ ¸¸µå´Â ±âÃÊ ¾ğ¾î</p>
+										<p>í™ˆí˜ì´ì§€ë¥¼ ë§Œë“œëŠ” ê¸°ì´ˆ ì–¸ì–´</p>
 									</header>
 								</article>
 								<article>
@@ -102,7 +102,7 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">CSS</a></h3>
-										<p>HTMLÀ» µğÀÚÀÎÇØÁÖ´Â ¾ğ¾î</p>
+										<p>HTMLì„ ë””ìì¸í•´ì£¼ëŠ” ì–¸ì–´</p>
 									</header>
 								</article>
 								<article>
@@ -111,7 +111,7 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">Servlet/JSP</a></h3>
-										<p>Java¸¦ ±âº»À¸·Î ÇÑ À¥ ÇÁ·Î±×·¡¹Ö ¾ğ¾î/½ºÅ©¸³Æ® ¾ğ¾î</p>
+										<p>Javaë¥¼ ê¸°ë³¸ìœ¼ë¡œ í•œ ì›¹ í”„ë¡œê·¸ë˜ë° ì–¸ì–´/ìŠ¤í¬ë¦½íŠ¸ ì–¸ì–´</p>
 									</header>
 								</article>
 								<article>
@@ -120,7 +120,7 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">JavaScript</a></h3>
-										<p>HTML¿¡ ±âº»ÀûÀÎ ·ÎÁ÷À» Á¤ÀÇÇÒ ¼ö ÀÖ´Â ¾ğ¾î</p>
+										<p>HTMLì— ê¸°ë³¸ì ì¸ ë¡œì§ì„ ì •ì˜í•  ìˆ˜ ìˆëŠ” ì–¸ì–´</p>
 									</header>
 								</article>
 								<article>
@@ -129,7 +129,7 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">MVC</a></h3>
-										<p>À¥ ÇÁ·ÎÁ§Æ® Áß °¡Àå ¸¹ÀÌ »ç¿ëÇÏ´Â µğÀÚÀÎÆĞÅÏ</p>
+										<p>ì›¹ í”„ë¡œì íŠ¸ ì¤‘ ê°€ì¥ ë§ì´ ì‚¬ìš©í•˜ëŠ” ë””ìì¸íŒ¨í„´</p>
 									</header>
 								</article>
 								<article>
@@ -138,7 +138,7 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 									</span>
 									<header class="major">
 										<h3><a href="#" class="link">Web Project</a></h3>
-										<p>¿©·¯ºĞÀÇ ÃÖÁ¾ÇÁ·ÎÁ§Æ®¿¡ À¥ ±â¼úÀ» È°¿ëÇÏ¼¼¿ä!</p>
+										<p>ì—¬ëŸ¬ë¶„ì˜ ìµœì¢…í”„ë¡œì íŠ¸ì— ì›¹ ê¸°ìˆ ì„ í™œìš©í•˜ì„¸ìš”!</p>
 									</header>
 								</article>
 							</section>
@@ -146,12 +146,12 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 							<section id="two">
 								<div class="inner">
 									<header class="major">
-										<h2>³ª¿¡°Ô ¿Â ¸Ş¼¼Áö È®ÀÎÇÏ±â</h2>
+										<h2>ë‚˜ì—ê²Œ ì˜¨ ë©”ì„¸ì§€ í™•ì¸í•˜ê¸°</h2>
 									</header>
 									<p></p>
 									<ul class="actions">
 										<%if(info !=null){ %>
-										<!-- ±×·¸´Ù¸é ¿©±â¿¡´Â ·Î±×ÀÎ ÇßÀ» ¶§ ±â´ÉÀÌ ÇÊ¿äÇÒ °Í -->
+										<!-- ê·¸ë ‡ë‹¤ë©´ ì—¬ê¸°ì—ëŠ” ë¡œê·¸ì¸ í–ˆì„ ë•Œ ê¸°ëŠ¥ì´ í•„ìš”í•  ê²ƒ -->
 										<%
 										MessageDAO dao =new MessageDAO();
 										ArrayList<MessageDTO> list =dao.select(info.getEmail());
@@ -163,17 +163,17 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 											out.print(list.get(i).getSend_date()+")");
 											out.print("</li>");
 											out.print("--------");
-											out.print("<a href=MsgDelete?num=");
-											out.print(list.get(i).getNum()+"'>»èÁ¦</a>");
+											out.print("<a href=MsgDelete.do?num=");
+											out.print(list.get(i).getNum()+">ì‚­ì œ</a>");
 											
 											out.print("<br>");
 										}
 										
 										%>
 										<%}else{ %>
-										<li>·Î±×ÀÎÀ» ÇÏ¼¼¿ä.</li>
+										<li>ë¡œê·¸ì¸ì„ í•˜ì„¸ìš”.</li>
 										<%} %>
-										<li><a href="MsgAllDelete" class="button next scrolly">ÀüÃ¼»èÁ¦ÇÏ±â</a></li>
+										<li><a href="MsgAllDelete.do" class="button next scrolly">ì „ì²´ì‚­ì œí•˜ê¸°</a></li>
 									</ul>
 								</div>
 							</section>
@@ -184,14 +184,14 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form action="MsgSendService" method="post">
+								<form action="MsgSendService.do" method="post">
 								<div class="field half first">
 										<label for="name">Name</label>
-										<input type="text" name=send_name id="name" placeholder="º¸³»´Â »ç¶÷ ÀÌ¸§" />
+										<input type="text" name=send_name id="name" placeholder="ë³´ë‚´ëŠ” ì‚¬ëŒ ì´ë¦„" />
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="text" name="receive_email"  id="email" placeholder="º¸³¾ »ç¶÷ ÀÌ¸ŞÀÏ"/>
+										<input type="text" name="receive_email"  id="email" placeholder="ë³´ë‚¼ ì‚¬ëŒ ì´ë©”ì¼"/>
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
@@ -212,9 +212,9 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 										<%if(info!=null){%>
 										<span><%=info.getEmail() %></span>
 										<%}else{ %>
-										<a href="#">·Î±×ÀÎ ÇØÁÖ¼¼¿ä.</a>
+										<a href="#">ë¡œê·¸ì¸ í•´ì£¼ì„¸ìš”.</a>
 										<%} %>
-										<!-- ·Î±×ÀÎ ÇÑ »ç¿ëÀÚÀÇ ÀÌ¸ŞÀÏÀ» Ãâ·ÂÇÏ½Ã¿À -->
+										<!-- ë¡œê·¸ì¸ í•œ ì‚¬ìš©ìì˜ ì´ë©”ì¼ì„ ì¶œë ¥í•˜ì‹œì˜¤ -->
 									</div>
 								</section>
 								<section>
@@ -224,9 +224,9 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 										<%if(info!=null){%>
 										<span><%=info.getPhone() %></span>
 										<%}else{ %>
-										<a href="#">·Î±×ÀÎ ÇØÁÖ¼¼¿ä.</a>
+										<a href="#">ë¡œê·¸ì¸ í•´ì£¼ì„¸ìš”.</a>
 										<%} %>
-										<!-- ·Î±×ÀÎ ÇÑ »ç¿ëÀÚÀÇ ÀüÈ­¹øÈ£¸¦ Ãâ·ÂÇÏ½Ã¿À -->
+										<!-- ë¡œê·¸ì¸ í•œ ì‚¬ìš©ìì˜ ì „í™”ë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤ -->
 									</div>
 								</section>
 								<section>
@@ -236,9 +236,9 @@ MemberDTO info = (MemberDTO)session.getAttribute("info");
 										<%if(info!=null){%>
 										<span><%=info.getAddr() %></span>
 										<%}else{ %>
-										<a href="#">·Î±×ÀÎ ÇØÁÖ¼¼¿ä.</a>
+										<a href="#">ë¡œê·¸ì¸ í•´ì£¼ì„¸ìš”.</a>
 										<%} %>
-										<!-- ·Î±×ÀÎ ÇÑ »ç¿ëÀÚÀÇ ÁıÁÖ¼Ò¸¦ Ãâ·ÂÇÏ½Ã¿À -->
+										<!-- ë¡œê·¸ì¸ í•œ ì‚¬ìš©ìì˜ ì§‘ì£¼ì†Œë¥¼ ì¶œë ¥í•˜ì‹œì˜¤ -->
 									</div>
 								</section>
 							</section>					

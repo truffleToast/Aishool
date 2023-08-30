@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;ex01_setPageContext.jsp&apos; to &apos;MessageSystem/src/com.model&apos;&#x0D;&#x0A;- Original project: &apos;Scope&apos;&#x0D;&#x0A;- Destination element: &apos;MessageSystem/src/com.model&apos;&#x0D;&#x0A;- Original element: &apos;ex01_setPageContext.jsp&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="=MessageSystem/src&lt;com.model" element1="src/main/webapp/ex01_setPageContext.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1693377688890" units="0" version="1.0"/>
+</session>

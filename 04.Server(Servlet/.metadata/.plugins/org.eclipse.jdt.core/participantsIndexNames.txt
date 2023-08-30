@@ -27,6 +27,8 @@ C:\Users\user\Desktop\AIschool\webStudy\04.Server\.metadata\.plugins\org.eclipse
 \MessageSystem\src
 C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1562311183.index
 \CookieSession\src\main\java
+C:\Users\user\Desktop\AIschool\04.Server(Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2313818076.index
+\MessageSystem\src
 C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1638117934.index
 \Scope\src\main\java
 C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1758937630.index
@@ -35,6 +37,8 @@ C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.
 \MemberSystem_MVC2\src\main\java
 C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3281373496.index
 \CookieSession\src\main\java
+C:\Users\user\Desktop\AIschool\04.Server(Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4023197742.index
+\MessageSystem\src
 C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2454588089.index
 \CookieSession\src\main\java
 C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2001846255.index
