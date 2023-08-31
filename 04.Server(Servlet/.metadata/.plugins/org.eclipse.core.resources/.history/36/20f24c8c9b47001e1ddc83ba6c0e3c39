@@ -1,0 +1,27 @@
+package com.controller;
+
+import javax.servlet.http.HttpSession;
+
+import com.model.MemberDAO;
+import com.model.MemberDTO;
+
+public class UpdateService {
+
+	
+	
+	HttpSession session = request.getSession();
+	MemberDAO dao = new MemberDAO();
+	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	String pw = request.getParameter("pw");
+	String phone = request.getParameter("phone");
+	String addr = request.getParameter("addr");
+	MemberDTO newInfo = new MemberDTO(info.getEmail(), pw, phone, addr);
+	int cnt = dao.update(newInfo);
+	if (cnt != 0) {
+		// 세션영역의 수정된 회원정보를 저장, main.jsp로 이동
+		session.setAttribute("info", newInfo);
+		response.sendRedirect("main.jsp");
+	} else {
+		response.sendRedirect("update.jsp");
+	}
+}

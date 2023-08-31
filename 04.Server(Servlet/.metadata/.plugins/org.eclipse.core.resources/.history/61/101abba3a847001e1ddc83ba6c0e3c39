@@ -1,0 +1,94 @@
+package com.front;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.controller.JoinService;
+import com.controller.LogOutService;
+import com.controller.LoginService;
+import com.controller.MsgAllDelete;
+import com.controller.MsgDelete;
+import com.controller.MsgSendService;
+import com.controller.UpdateService;
+import com.model.MemberDAO;
+import com.model.MemberDTO;
+import com.model.MessageDAO;
+import com.model.MessageDTO;
+
+/**
+ * Servlet implementation class FrontController
+ */
+@WebServlet("*.do")
+public class FrontController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	HashMap<String, String> = new HashMap<>();
+	
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 1. client가 요청한 url 가져오기
+		String uri = request.getRequestURI();
+		System.out.println(uri);
+		request.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
+		// 2. Context Path(웹 어플리케이션의 시작 주소)
+		String contextPath = request.getContextPath();
+		String command = uri.substring(contextPath.length() + 1);
+		response.setContentType("text/html;charset=UTF-8");
+		ICommand service = null; // 상속과 오버라이딩 ,오버로딩을 활용한 업케스팅
+		// switch 잘 쓸줄 몰라서 이걸로 연습
+		switch (command) {
+		case "JoinService.do": {
+			service = new JoinService();
+			break;
+		}
+		case "LoginService.do": {
+			// 로그인 기능 구현
+			service = new LoginService();
+			break;
+		}
+		case "LogOutService.do": {
+			// 로그아웃 서비스
+			service = new LogOutService();
+			break;
+		}
+		case "UpdateService.do": {
+			// 회원정보 수정 서비스
+			service = new UpdateService();
+			break;
+		}
+		case "MsgSendService.do": {
+			// 메세지보내기
+			service = new MsgSendService();
+			break;
+		}
+		case "MsgDelete.do": {
+			// 메세지 개별삭제
+			service = new MsgDelete();
+			break;
+		}
+		case "MsgAllDelete.do": {
+			// 메세지 전체삭제
+			service = new MsgAllDelete();
+			break;
+		}
+		default:
+			// 잘못된 접근일 경우 이전 페이지로
+			out.print("<script>" + "alert('잘못된 접근입니다.');" + "history.back();" + "</script>");
+			break;
+		}
+		String moveUrl = service.execute(request, response);
+		response.sendRedirect(moveUrl);
+	}
+}

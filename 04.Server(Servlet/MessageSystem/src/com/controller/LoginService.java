@@ -1,0 +1,34 @@
+package com.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.front.ICommand;
+import com.model.MemberDAO;
+import com.model.MemberDTO;
+
+public class LoginService implements ICommand {
+	
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException {
+		MemberDAO dao = new MemberDAO();
+		HttpSession session = request.getSession();
+		String email = request.getParameter("email");
+		String pw = request.getParameter("pw");
+		MemberDTO dto = new MemberDTO(email, pw);
+		MemberDTO info = dao.login(dto);
+		if (info != null) {
+			System.out.println(info.toString());
+			session.setAttribute("info", info);
+		} else {
+			System.out.println("로그인실패");
+		}
+		return "main.jsp";
+		
+		
+	}
+
+}

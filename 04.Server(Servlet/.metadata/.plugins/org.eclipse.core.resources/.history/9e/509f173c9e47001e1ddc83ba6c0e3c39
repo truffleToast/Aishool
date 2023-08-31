@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.front;
+
+/**
+ * @author user
+ *
+ */
+public interface Icommand {
+
+}

@@ -1,0 +1,16 @@
+package com.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
+
+public class MsgSendService {
+
+	
+			
+			
+
+	}
+
+

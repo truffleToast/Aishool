@@ -1,0 +1,7 @@
+package com.controller;
+
+import com.front.Icommand;
+
+public class MsgDelete implements Icommand {
+
+}

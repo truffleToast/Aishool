@@ -1,0 +1,22 @@
+package com.controller;
+
+import com.model.MessageDTO;
+
+public class MsgSendService {
+
+	
+	String send_name = request.getParameter("send_name");
+	String receive_email = request.getParameter("receive_email");
+	String message = request.getParameter("message_content");
+	MessageDTO dto = new MessageDTO(send_name, receive_email, message);
+	int cnt = mdao.sendMessage(dto);
+	String msg = "";
+	if (cnt > 0) {
+		msg = "문자 전송 완료";
+	} else {
+		msg = "문자 전송 실패";
+	}
+	out.print("<script>alert('" + msg + "');");
+	out.print("location.href='main.jsp#two';");
+	out.print("</script>");
+}
