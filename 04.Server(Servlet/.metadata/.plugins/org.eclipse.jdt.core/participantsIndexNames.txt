@@ -45,6 +45,8 @@ C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.
 \CookieSession\src\main\java
 C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3866993496.index
 \MemberSysyem\src\main\java
+C:\Users\user\Desktop\AIschool\04.Server(Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\124312508.index
+\FrontProject\src\main\java
 C:\Users\user\Desktop\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1069801582.index
 \MemberSystem_MVC2\src\main\java
 C:\Users\user\Desktop\AIschool\webStudy\04.Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1638117934.index
